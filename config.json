@@ -1,0 +1,7 @@
+{
+    "sendgrid": {
+        "from": "web@stephen.work",
+        "to": "me@stephen.work",
+        "subject": "via stephen.work"
+    }
+}
