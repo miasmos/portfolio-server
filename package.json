@@ -77,7 +77,8 @@
         "prod": "webpack --mode=production",
         "dev": "webpack -w --mode=development",
         "run": "node --inspect ./dist/app.js",
-        "watch": "nodemon ./dist/app.js"
+        "watch": "nodemon ./dist/app.js",
+        "deploy": "git push production master"
     },
     "nyc": {
         "include": [
