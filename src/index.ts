@@ -1,9 +1,9 @@
 import * as bodyParser from 'body-parser';
-import { Config } from './Config';
-import { Logger, Env } from './utils';
+import { Logger, Env, Config } from './utils';
 import * as Routes from './routes';
 
 import helmet = require('helmet');
+import cors = require('cors');
 import celebrate = require('celebrate');
 import express = require('express');
 import http = require('http');
@@ -25,6 +25,22 @@ class App {
             app.enable('trust proxy');
         }
         app.use(helmet());
+        app.use(
+            cors({
+                origin: (origin, callback) => {
+                    const protocols = ['http', 'https'];
+                    const matches: boolean = protocols.some(protocol =>
+                        Config.cors.some(host => `${protocol}://${host}` === origin)
+                    );
+                    if (matches) {
+                        callback(null, true);
+                    } else {
+                        callback(new Error());
+                    }
+                },
+                optionsSuccessStatus: 200
+            })
+        );
         app.use(compression());
         app.use(bodyParser.json());
 

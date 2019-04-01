@@ -1,7 +1,18 @@
 {
-    "sendgrid": {
-        "from": "web@stephen.work",
-        "to": "me@stephen.work",
-        "subject": "via stephen.work"
+    "development": {
+        "sendgrid": {
+            "from": "web@stephen.work",
+            "to": "me@stephen.work",
+            "subject": "via stephen.work"
+        },
+        "cors": ["localhost"]
+    },
+    "production": {
+        "sendgrid": {
+            "from": "web@stephen.work",
+            "to": "me@stephen.work",
+            "subject": "via stephen.work"
+        },
+        "cors": ["stephen.work", "api.stephen.work", "www.stephen.work"]
     }
 }

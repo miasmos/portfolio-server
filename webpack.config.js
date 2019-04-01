@@ -1,4 +1,6 @@
-var nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
     entry: './src/index.ts',
     output: {
@@ -15,5 +17,6 @@ module.exports = {
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
         ]
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
+    plugins: [new Dotenv()]
 };

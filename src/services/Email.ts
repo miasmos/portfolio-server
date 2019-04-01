@@ -1,10 +1,10 @@
-import { Config } from '../Config';
+import { Config } from '../utils/index';
 
 import sendgrid = require('@sendgrid/mail');
 
 class EmailClass {
     public constructor() {
-        sendgrid.setApiKey(Config.sendgrid.apiKey);
+        sendgrid.setApiKey(process.env.SENDGRID_API_KEY!);
     }
 
     public send(sender: string, body: string): Promise<any> {

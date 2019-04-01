@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { Respond, IResponse, IError, isError, RateLimitedHandler } from '../../Respond';
-import { ErrorCode, ErrorMessage, StatusCode } from '../../Enum';
+import { ErrorCode } from '../../Enum';
 import { Validate } from '../../Validate';
 import { Email as EmailService } from '../../services/Email';
 
@@ -12,6 +12,7 @@ export const Email = Router();
 
 export const send = async (sender: string, body: string): Promise<IResponse | IError> => {
     try {
+        return new Promise(resolve => setTimeout(() => resolve({ success: true }), 5000));
         await EmailService.send(sender, body);
         return { success: true };
     } catch (error) {
@@ -37,12 +38,14 @@ Email.post(
 
         try {
             const response: IError | IResponse = await send(sender!, body!);
+            console.log(response);
             if (isError(response)) {
                 Respond.error(res, response);
             } else {
                 Respond.ok(res, response);
             }
         } catch (error) {
+            console.error(error);
             Respond.error(res, {
                 code: ErrorCode.Default
             });
