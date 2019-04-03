@@ -12,7 +12,6 @@ export const Email = Router();
 
 export const send = async (sender: string, body: string): Promise<IResponse | IError> => {
     try {
-        return new Promise(resolve => setTimeout(() => resolve({ success: true }), 5000));
         await EmailService.send(sender, body);
         return { success: true };
     } catch (error) {
