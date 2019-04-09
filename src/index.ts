@@ -35,7 +35,7 @@ class App {
                     if (matches) {
                         callback(null, true);
                     } else {
-                        callback(new Error());
+                        callback(new Error('cors'));
                     }
                 },
                 optionsSuccessStatus: 200

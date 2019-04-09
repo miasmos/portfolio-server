@@ -5,7 +5,7 @@
             "to": "me@stephen.work",
             "subject": "via stephen.work"
         },
-        "cors": ["localhost"]
+        "cors": ["localhost", "127.0.0.1"]
     },
     "production": {
         "sendgrid": {
