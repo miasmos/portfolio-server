@@ -5,7 +5,7 @@
     "author": "Stephen Poole",
     "dependencies": {
         "@sendgrid/mail": "^6.3.1",
-        "bluebird": "^3.5.3",
+        "bluebird": "^3.7.2",
         "body-parser": "^1.18.3",
         "celebrate": "^9.0.2",
         "compression": "^1.7.3",
