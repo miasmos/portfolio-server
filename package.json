@@ -12,7 +12,7 @@
         "cors": "^2.8.5",
         "dotenv": "^6.2.0",
         "express": "^4.16.4",
-        "express-rate-limit": "^3.4.0",
+        "express-rate-limit": "^3.5.3",
         "helmet": "^3.15.1",
         "joi": "^14.3.1",
         "phantom": "^6.0.3",
