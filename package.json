@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "author": "Stephen Poole",
     "dependencies": {
-        "@sendgrid/mail": "^6.3.1",
+        "@sendgrid/mail": "^6.5.5",
         "bluebird": "^3.5.3",
         "body-parser": "^1.18.3",
         "celebrate": "^9.0.2",
